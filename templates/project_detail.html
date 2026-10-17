@@ -5,15 +5,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>{{ project.title }} | Portfolio</title>
+    <title>{{ project.title }} | Raghu GR</title>
+
+    <meta name="description" content="{{ project.description }}">
 
     <link rel="stylesheet"
           href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 
 <body>
+    <!-- Navigation -->
     <header class="navbar">
-        <a href="/" class="logo">Portfolio.</a>
+        <a href="/" class="logo">Raghu GR.</a>
 
         <nav>
             <a href="/">Home</a>
@@ -23,32 +26,77 @@
     </header>
 
     <main>
-        <section class="section">
-            <a href="/projects">← Back to projects</a>
+        <section class="section project-detail">
 
+            <!-- Back link -->
+            <a href="/projects" class="back-link">
+                &larr; Back to Projects
+            </a>
+
+            <!-- Project heading -->
             <p class="section-label">PROJECT DETAILS</p>
 
             <h1>{{ project.title }}</h1>
 
-            <p>{{ project.description }}</p>
+            <p class="project-overview">
+                {{ project.description }}
+            </p>
 
-            <h2>Objective</h2>
-            <p>{{ project.objective }}</p>
+            <!-- Technologies -->
+            <div class="project-detail-block">
+                <h2>Technologies Used</h2>
 
-            <h2>Technologies Used</h2>
-            <ul>
-                {% for technology in project.technologies %}
-                    <li>{{ technology }}</li>
-                {% endfor %}
-            </ul>
+                <div class="tech-tags">
+                    {% for technology in project.technologies %}
+                        <span class="tech-tag">
+                            {{ technology }}
+                        </span>
+                    {% endfor %}
+                </div>
+            </div>
 
-            <h2>Results</h2>
-            <p>{{ project.results }}</p>
+            <!-- Objective -->
+            {% if project.objective %}
+                <div class="project-detail-block">
+                    <h2>Project Objective</h2>
+                    <p>{{ project.objective }}</p>
+                </div>
+            {% endif %}
+
+            <!-- Results -->
+            {% if project.results %}
+                <div class="project-detail-block">
+                    <h2>Implementation & Results</h2>
+                    <p>{{ project.results }}</p>
+                </div>
+            {% endif %}
+
+            <!-- GitHub link -->
+            {% if project.github %}
+                <div class="project-actions">
+                    <a href="{{ project.github }}"
+                       class="button primary"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        View on GitHub &rarr;
+                    </a>
+
+                    <a href="/projects"
+                       class="button secondary">
+                        Explore Other Projects
+                    </a>
+                </div>
+            {% endif %}
+
         </section>
     </main>
 
+    <!-- Footer -->
     <footer>
-        <p>Built with HTML, CSS and Flask.</p>
+        <p>&copy; 2026 Raghu GR.</p>
+        <p class="footer-tagline">
+            Always learning. Always building.
+        </p>
     </footer>
 </body>
 </html>

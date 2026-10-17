@@ -21,61 +21,120 @@ app = Flask(__name__)
 app.config["SECRET_KEY"] = os.getenv("FLASK_SECRET_KEY")
 
 # Project information
+
+# Project information
 projects = {
     "camouflage-detection": {
-        "title": "Camouflaged Object Segmentation",
+        "title": "Camouflaged Military Object Detection",
         "description": (
-            "A computer vision project for identifying camouflaged "
-            "objects in complex backgrounds."
+            "A deep learning-based computer vision system using YOLOv8 "
+            "to detect camouflaged military objects against complex "
+            "backgrounds. The project includes a Flask web application "
+            "for image uploads and live webcam detection."
         ),
         "technologies": [
-            "Python", "PyTorch", "Vision Transformer", "SegNet"
+            "Python",
+            "YOLOv8",
+            "PyTorch",
+            "Flask",
+            "OpenCV",
+            "HTML",
+            "CSS",
+            "JavaScript"
         ],
         "objective": (
-            "Improve object segmentation when foreground objects "
-            "blend into their surroundings."
+            "Explore deep learning-based object detection for "
+            "identifying camouflaged objects in complex scenes."
         ),
         "results": (
-            "Evaluated using segmentation metrics such as IoU "
-            "and binary cross-entropy."
+            "Provides a web interface for image-based and webcam-based "
+            "detection."
+        ),
+        "github": (
+            "https://github.com/Yogesh-Rebari/"
+            "Camouflaged-Object-Detection-using-Deep-Learning"
         )
     },
 
     "afdx-simulator": {
-        "title": "AFDX Simulator",
-        "description": (
-            "A network simulation project exploring virtual links "
-            "and frame transmission."
-        ),
-        "technologies": ["C++", "UDP", "Networking", "CMake"],
-        "objective": (
-            "Simulate virtual-link-based communication and frame encoding."
-        ),
-        "results": (
-            "Implemented virtual-link management and basic "
-            "frame encode/decode testing."
-        )
+    "title": "AFDX Simulator",
+
+    "description": (
+        "An ongoing C++ project focused on simulating "
+        "AFDX network communication and virtual links."
+    ),
+
+    "technologies": [
+        "C++",
+        "UDP",
+        "Networking",
+        "CMake"
+    ],
+
+    "objective": (
+        "Explore AFDX communication concepts, virtual-link "
+        "management, and frame encoding and decoding."
+    ),
+
+    "results": (
+        "Currently under development."
+    )
     },
 
     "house-price-prediction": {
-        "title": "Bengaluru House Price Prediction",
-        "description": (
-            "A machine learning model for estimating residential "
-            "property prices."
-        ),
-        "technologies": [
-            "Python", "Pandas", "Scikit-learn", "Gradient Boosting"
-        ],
-        "objective": "Predict house prices using property-related features.",
-        "results": "The reported model achieved an R² score of 0.85."
-    }
+    "title": "Bengaluru House Price Prediction",
+
+    "description": (
+        "A machine learning project that predicts house prices "
+        "using property-related features. The project includes "
+        "exploratory data analysis, model training, and a Flask "
+        "web application for generating price predictions."
+    ),
+
+    "technologies": [
+        "Python",
+        "Pandas",
+        "NumPy",
+        "Scikit-learn",
+        "Flask",
+        "Flask-WTF",
+        "Joblib"
+    ],
+
+    "objective": (
+        "Develop a machine learning solution to estimate "
+        "Bengaluru house prices from property features and "
+        "make predictions accessible through a web interface."
+    ),
+
+    "results": (
+        "Developed an end-to-end prediction workflow covering "
+        "data analysis, model training, model serialization, "
+        "and web-based price prediction. The reported model "
+        "achieved an R² score of 0.85."
+    ),
+
+    "github": (
+        "https://github.com/Raghu131204/Houseprice_project"
+    )
+}
 }
 
 
 # Home page
 @app.route("/")
 def home():
-    return render_template("index.html")
+    featured_projects = [
+        ("camouflage-detection", projects["camouflage-detection"]),
+        ("afdx-simulator", projects["afdx-simulator"]),
+        ("house-price-prediction", projects["house-price-prediction"])
+    ]
+
+    return render_template(
+        "index.html",
+        featured_projects=featured_projects
+    )
+
 
 
 # Projects page

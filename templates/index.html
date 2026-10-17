@@ -1,18 +1,27 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Raghu GR | Portfolio</title>
 
-    <link rel="stylesheet"
-          href="{{ url_for('static', filename='css/style.css') }}">
+    <meta
+        name="description"
+        content="Raghu GR's portfolio showcasing software engineering, computer vision, machine learning, and networking projects."
+    >
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}"
+    >
 </head>
 
 <body>
 
+    <!-- Navigation -->
     <header class="navbar">
         <a href="/" class="logo">Portfolio.</a>
 
@@ -25,107 +34,140 @@
     </header>
 
     <main>
+
+        <!-- Hero Section -->
         <section id="home" class="hero">
-            <p class="greeting">HELLO, I'M</p>
+            <div class="hero-content">
 
-            <h1>Raghu GR</h1>
+                <div class="hero-image">
+                    <img
+                        src="{{ url_for('static', filename='images/profile pic.jpg') }}"
+                        alt="Raghu GR profile photo"
+                        class="profile-photo"
+                    >
+                </div>
 
-            <h2>Aspiring Software Engineer</h2>
+                <div class="hero-text">
 
-            <p class="intro">
-                I build software solutions and explore
-                Machine Learning, Deep Learning, and intelligent systems.
-            </p>
+                    <p class="greeting">HELLO, I'M</p>
 
-            <div class="hero-buttons">
-                <a href="#projects" class="button primary">
-                    Explore My Work
-                </a>
+                    <h1>Raghu GR</h1>
 
-                <a href="#contact" class="button secondary">
-                    Contact Me
-                </a>
+                    <h2>Software Developer</h2>
+                    <div class="hero-buttons">
+                        <a href="#projects" class="button primary">
+                            Explore My Work
+                        </a>
+
+                        <a href="/contact" class="button secondary">
+                            Contact Me
+                        </a>
+                    </div>
+
+                </div>
+
             </div>
         </section>
 
+
+        <!-- About Section -->
         <section id="about" class="section">
+
             <p class="section-label">GET TO KNOW ME</p>
+
             <h2>About Me</h2>
 
             <p>
-                I am a Computer Science Engineering student interested
-                in software development, artificial intelligence,
-                and building practical engineering projects.
+                I am a Software Developer working with C++ on digital data communication standards in avionics. I am passionate about system-level programming, networking, and building reliable software solutions. I also explore Machine Learning, Deep Learning, and Computer Vision.
             </p>
+
+            <a href="/about" class="project-link">
+                More About Me
+                <span class="arrow">↗</span>
+            </a>
+
         </section>
 
+
+        <!-- Featured Projects -->
         <section id="projects" class="section">
+
             <p class="section-label">WHAT I'VE BUILT</p>
+
             <h2>Featured Projects</h2>
 
             <div class="project-grid">
-                <article class="project-card">
-                    <h3>Camouflaged Object Segmentation</h3>
-                    <p>
-                        A computer vision project exploring Vision
-                        Transformers and image segmentation.
-                    </p>
-                    <span>Python · PyTorch · Deep Learning</span>
-                        <a 
-                            href="{{ url_for('project_detail', slug='camouflage-detection') }}
-                            "class="project-link" >
-                            View Project
-                            <span class="arrow">↗</span>
-                        </a>
-                </article>
 
-                <article class="project-card">
-                    <h3>AFDX Simulator</h3>
-                    <p>
-                        A network simulation project involving virtual
-                        links, frame encoding, and UDP transport.
-                    </p>
-                    <span>C++ · Networking · Simulation</span>
-                     <a 
-                            href="{{ url_for('project_detail', slug='afdx-simulator') }}
-                            "class="project-link" >
-                           
-                            View Project
-                            <span class="arrow">↗</span>
-                        </a>
-                </article>
+                {% for slug, project in featured_projects %}
 
-                <article class="project-card">
-                    <h3>House Price Prediction</h3>
-                    <p>
-                        A machine learning pipeline for predicting
-                        Bengaluru house prices.
-                    </p>
-                    <span>Python · Scikit-learn · ML</span>
-                    <a 
-                            href="{{ url_for('project_detail', slug='house-price-prediction') }}
-                            "class="project-link" >
+                    <article class="project-card">
+
+                        <h3>{{ project.title }}</h3>
+
+                        <p>
+                            {{ project.description }}
+                        </p>
+
+                        <div class="project-technologies">
+                            {% for technology in project.technologies %}
+                                <span>{{ technology }}</span>
+                            {% endfor %}
+                        </div>
+
+                        <a
+                            href="{{ url_for('project_detail', slug=slug) }}"
+                            class="project-link"
+                        >
                             View Project
                             <span class="arrow">↗</span>
                         </a>
-                </article>
+
+                    </article>
+
+                {% endfor %}
+
             </div>
+
+            <div class="section-action">
+                <a href="/projects" class="button secondary">
+                    View All Projects
+                </a>
+            </div>
+
         </section>
 
+
+        <!-- Contact Section -->
         <section id="contact" class="section">
+
             <p class="section-label">LET'S CONNECT</p>
+
             <h2>Contact Me</h2>
-            <p>Interested in technology and engineering? Let's connect.</p>
-            <a href="mailto:your-eng2020.cse@gmail.com" class="button primary">
-                Send Me an Email
+
+            <p>
+                Interested in technology and engineering?
+                Let's connect.
+            </p>
+
+            <a href="/contact" class="button primary">
+                Send Me a Message
             </a>
+
         </section>
+
     </main>
 
+
+    <!-- Footer -->
     <footer>
-        <p>&copy; 2026 Raghu GR. Built with HTML, CSS and Flask.</p>
+        <p>&copy;2026 Raghu GR.</p>
+        <p class="footer-tagline">
+            Always learning. Always building.
+        </p>
     </footer>
 
+
+    <!-- JavaScript -->
     <script src="{{ url_for('static', filename='js/main.js') }}"></script>
 
 </body>

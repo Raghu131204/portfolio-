@@ -1,18 +1,27 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>About Me | Portfolio</title>
+    <title>About Me | Raghu GR</title>
 
-    <link rel="stylesheet"
-          href="{{ url_for('static', filename='css/style.css') }}">
+    <meta
+        name="description"
+        content="About Raghu GR, Software Developer working with C++, GUI development, hardware interfaces, and avionics communication systems."
+    >
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}"
+    >
 </head>
 
 <body>
 
+    <!-- Navigation -->
     <header class="navbar">
         <a href="/" class="logo">Portfolio.</a>
 
@@ -20,7 +29,7 @@
             <a href="/">Home</a>
             <a href="/about">About</a>
             <a href="/projects">Projects</a>
-            <a href="/#contact">Contact</a>
+            <a href="/contact">Contact</a>
         </nav>
     </header>
 
@@ -28,127 +37,275 @@
 
         <!-- Introduction -->
         <section class="section">
+
             <p class="section-label">GET TO KNOW ME</p>
 
             <h1>About Me</h1>
 
             <p>
-                I am a Computer Science Engineering graduate-in-progress
-                interested in software development, machine learning,
-                deep learning, and systems engineering.
+                I am a Software Developer working with C and C++ on GUI development and low-level software interfaces for hardware interaction.
             </p>
 
             <p>
-                I enjoy understanding how things work internally,
-                from neural networks and computer vision models
-                to communication protocols and network simulators.
+                I completed my Bachelor of Engineering (B.E.) in
+                Computer Science and Engineering from
+                Channabasaveshwara Institute of Technology,
+                affiliated with Visvesvaraya Technological
+                University (VTU).
             </p>
+
+            <p>
+                My technical interests include systems programming,
+                computer networking, avionics communication standards,
+                multithreading, and hardware-software integration.
+                I also explore Machine Learning, Deep Learning,
+                and Computer Vision.
+            </p>
+
         </section>
+
 
         <!-- Education -->
         <section class="section">
+
             <p class="section-label">MY BACKGROUND</p>
 
             <h2>Education</h2>
 
             <article class="project-card">
-                <h3>
-                    Channabasaveshwara Institute of Technology
-                </h3>
+
+                <h3>Channabasaveshwara Institute of Technology</h3>
 
                 <p>
-                    Bachelor of Engineering in Computer Science
-                    and Engineering
+                    Bachelor of Engineering (B.E.) in
+                    Computer Science and Engineering
+                </p>
+
+                <p>
+                    Visvesvaraya Technological University (VTU)
                 </p>
 
                 <span>2022 – 2026</span>
+
             </article>
+
         </section>
 
-        <!-- Technical interests -->
-        <section class="section">
+
+        <!-- Technical Skills -->
+        <section class="section skills-section">
+
             <p class="section-label">WHAT I WORK WITH</p>
 
             <h2>Technical Skills</h2>
 
-            <div class="project-grid">
+            <div class="skills-list">
 
-                <article class="project-card">
-                    <h3>Programming</h3>
-                    <p>Python, C, C++, SQL</p>
-                    <span>Core Development</span>
-                </article>
+                <div class="skill-group">
+                    <h3>Programming Languages</h3>
 
-                <article class="project-card">
-                    <h3>AI & Machine Learning</h3>
-                    <p>
-                        PyTorch, Scikit-learn, Pandas,
-                        NumPy, Computer Vision
-                    </p>
-                    <span>Intelligent Systems</span>
-                </article>
+                    <div class="skill-tags">
+                        <span>C</span>
+                        <span>C++</span>
+                        <span>Python</span>
+                    </div>
+                </div>
 
-                <article class="project-card">
-                    <h3>Systems & Networking</h3>
-                    <p>
-                        Multithreading, UDP, TCP/IP,
-                        ARINC 429, AFDX simulation
-                    </p>
-                    <span>Systems Engineering</span>
-                </article>
+
+                <div class="skill-group">
+                    <h3>Machine Learning</h3>
+
+                    <div class="skill-tags">
+                        <span>Machine Learning</span>
+                        <span>Deep Learning</span>
+                        <span>Data Visualization with Python</span>
+                    </div>
+                </div>
+
+
+                <div class="skill-group">
+                    <h3>Computer Networks</h3>
+
+                    <div class="skill-tags">
+                        <span>UDP</span>
+                        <span>TCP/IP</span>
+                        <span>Socket Programming</span>
+                        <span>Win32 API</span>
+                    </div>
+                </div>
+
+
+                <div class="skill-group">
+                    <h3>Avionics Communication Standards</h3>
+
+                    <div class="skill-tags">
+                        <span>ARINC 429</span>
+                        <span>AFDX</span>
+                        <span>MIL-STD-1553</span>
+                    </div>
+                </div>
+
+
+                <div class="skill-group">
+                    <h3>Multithreading &amp; Synchronization</h3>
+
+                    <div class="skill-tags">
+                        <span>Multithreading</span>
+                        <span>Memory Management</span>
+                        <span>Inter-Process Communication (IPC)</span>
+                        <span>Task Synchronization Techniques</span>
+                    </div>
+                </div>
+
+
+                <div class="skill-group">
+                    <h3>Windows GUI Development</h3>
+
+                    <div class="skill-tags">
+                        <span>Microsoft Foundation Classes (MFC)</span>
+                        <span>Windows Desktop UI</span>
+                        <span>Hardware-Software Interfaces</span>
+                    </div>
+                </div>
+                
+                <div class="skill-group">
+                    <h3>Software Development & Version Control</h3>
+
+                    <div class="skill-tags">
+                        <span>SDLC</span>
+                        <span>Git</span>
+                        <span>GitHub</span>
+                    </div>
+                </div>
 
             </div>
+
         </section>
 
-        <!-- Experience -->
+
+        <!-- Professional Experience -->
         <section class="section">
-            <p class="section-label">PRACTICAL EXPERIENCE</p>
 
-            <h2>Experience</h2>
+            <p class="section-label">PROFESSIONAL EXPERIENCE</p>
 
+            <h2>Work Experience</h2>
+
+            <!-- Current Position -->
             <article class="project-card">
-                <h3>Internship — LRDE, DRDO</h3>
+
+                <h3>Software Developer</h3>
 
                 <p>
-                    Worked on avionics communication concepts,
-                    ARINC 429 data handling, encoding and decoding,
-                    and communication simulation using C/C++.
+                    <strong>CADMAXX Solutions Pvt. Limited</strong>
                 </p>
 
-                <span>Avionics · C/C++ · Communication Systems</span>
+                <span>May 2026 – Present</span>
+
+                <p>
+                    Developing software applications using C and C++,
+                    building graphical user interfaces (GUIs), and
+                    implementing low-level software interfaces
+                    for hardware interaction.
+                </p>
+
+                <span>
+                    C · C++ · GUI Development · Win32 API ·
+                    Hardware-Software Integration
+                </span>
+
             </article>
 
+
+            <!-- DRDO Internship -->
             <article class="project-card" style="margin-top: 20px;">
-                <h3>AI & Data Analytics Virtual Internship</h3>
+
+                <h3>Software Engineer Intern</h3>
 
                 <p>
-                    Worked on an Air Quality Index prediction
-                    project using machine learning techniques.
+                    <strong>
+                        Electronics and Radar Development Establishment
+                        (LRDE), DRDO — Bengaluru
+                    </strong>
                 </p>
 
-                <span>AICTE · Shell India · Edunet Foundation</span>
+                <span>August 2025 – April 2026</span>
+
+                <p>
+                    Worked on software application development using
+                    C++, computer networking concepts, and digital
+                    data communication protocols used in avionics.
+                </p>
+
+                <p>
+                    Gained practical experience with UDP and TCP/IP
+                    communication, data transmission and reception,
+                    multithreaded programming, and avionics
+                    communication standards.
+                </p>
+
+                <span>
+                    C++ · UDP · TCP/IP · ARINC 429 ·
+                    Digital Data Communication
+                </span>
+
             </article>
         </section>
+
 
         <!-- Certifications -->
-        <section class="section">
-            <p class="section-label">CONTINUOUS LEARNING</p>
+<section class="section" id="certifications">
+    <p class="section-label">ACHIEVEMENTS & LEARNING</p>
+    <h2>Certifications</h2>
 
-            <h2>Certifications & Achievements</h2>
+    <ul>
+        <li>
+            <strong>Neural Networks and Deep Learning</strong>
+            - DeepLearning.AI
+        </li>
+        <li>
+            <strong>Deep Learning in Ecological Studies</strong>
+            - IIRS, Dehradun
+        </li>
+        <li>
+            <strong>Network Architecture Fundamentals</strong>
+            - Cisco
+        </li>
+        <li>
+            <strong>Python</strong>
+            - HackerRank
+        </li>
+    </ul>
+</section>
 
-            <ul>
-                <li>Neural Networks and Deep Learning — DeepLearning.AI</li>
-                <li>Python Basic Certification — HackerRank</li>
-                <li>IIRS ISRO workshop participation</li>
-                <li>First place in Code Debugging Competition</li>
-            </ul>
-        </section>
+<!-- Awards -->
+<section class="section" id="awards">
+    <p class="section-label">RECOGNITION</p>
+    <h2>Awards</h2>
+
+    <ul>
+        <li>
+            <strong>Best All-Round Excellence Award</strong>
+            — Recognized for educational and technical excellence.
+        </li>
+        <li>
+            <strong>First Prize — Code Debugging Competition</strong>
+            — Channabasaveshwara Institute of Technology.
+        </li>
+    </ul>
+</section>
 
     </main>
 
+
+    <!-- Footer -->
     <footer>
-        <p>Built with HTML, CSS and Flask.</p>
+        <p>&copy;2026 Raghu GR.</p>
+
+        <p class="footer-tagline">
+            Always learning. Always building.
+        </p>
     </footer>
 
 </body>
+
 </html>
