@@ -1,0 +1,100 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Projects | Portfolio</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <header class="navbar">
+
+        <a href="/" class="logo">Portfolio.</a>
+
+        <nav>
+            <a href="/">Home</a>
+            <a href="/about">About</a>
+            <a href="/projects">Projects</a>
+            <a href="/#contact">Contact</a>
+        </nav>
+
+    </header>
+
+
+    <!-- Main Projects Section -->
+    <main>
+
+        <section class="section">
+
+            <p class="section-label">MY WORK</p>
+
+            <h1>Projects</h1>
+
+            <p>
+                Explore my projects in machine learning,
+                computer vision, networking, and software engineering.
+            </p>
+
+
+            <!-- Project Cards -->
+            <div class="project-grid">
+
+                {% for slug, project in projects.items() %}
+
+                    <article class="project-card">
+
+                        <!-- Project Title -->
+                        <h2>{{ project.title }}</h2>
+
+
+                        <!-- Project Description -->
+                        <p>{{ project.description }}</p>
+
+
+                        <!-- Technologies -->
+                        <span>
+                            {% for technology in project.technologies %}
+                                {{ technology }}{% if not loop.last %} · {% endif %}
+                            {% endfor %}
+                        </span>
+
+
+                        <!-- View Project Button -->
+                        <a
+                            href="{{ url_for('project_detail', slug=slug) }}"
+                            class="project-link"
+                        >
+                            View Project
+                            <span class="arrow">↗</span>
+                        </a>
+
+                    </article>
+
+                {% else %}
+
+                    <p>No projects are available yet.</p>
+
+                {% endfor %}
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 My Portfolio. Built with HTML, CSS and Flask.</p>
+    </footer>
+
+
+</body>
+</html>

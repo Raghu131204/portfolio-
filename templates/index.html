@@ -1,0 +1,132 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Raghu GR | Portfolio</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <header class="navbar">
+        <a href="/" class="logo">Portfolio.</a>
+
+        <nav>
+            <a href="/">Home</a>
+            <a href="/about">About</a>
+            <a href="/projects">Projects</a>
+            <a href="/contact">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <p class="greeting">HELLO, I'M</p>
+
+            <h1>Raghu GR</h1>
+
+            <h2>Aspiring Software Engineer</h2>
+
+            <p class="intro">
+                I build software solutions and explore
+                Machine Learning, Deep Learning, and intelligent systems.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="#projects" class="button primary">
+                    Explore My Work
+                </a>
+
+                <a href="#contact" class="button secondary">
+                    Contact Me
+                </a>
+            </div>
+        </section>
+
+        <section id="about" class="section">
+            <p class="section-label">GET TO KNOW ME</p>
+            <h2>About Me</h2>
+
+            <p>
+                I am a Computer Science Engineering student interested
+                in software development, artificial intelligence,
+                and building practical engineering projects.
+            </p>
+        </section>
+
+        <section id="projects" class="section">
+            <p class="section-label">WHAT I'VE BUILT</p>
+            <h2>Featured Projects</h2>
+
+            <div class="project-grid">
+                <article class="project-card">
+                    <h3>Camouflaged Object Segmentation</h3>
+                    <p>
+                        A computer vision project exploring Vision
+                        Transformers and image segmentation.
+                    </p>
+                    <span>Python · PyTorch · Deep Learning</span>
+                        <a 
+                            href="{{ url_for('project_detail', slug='camouflage-detection') }}
+                            "class="project-link" >
+                            View Project
+                            <span class="arrow">↗</span>
+                        </a>
+                </article>
+
+                <article class="project-card">
+                    <h3>AFDX Simulator</h3>
+                    <p>
+                        A network simulation project involving virtual
+                        links, frame encoding, and UDP transport.
+                    </p>
+                    <span>C++ · Networking · Simulation</span>
+                     <a 
+                            href="{{ url_for('project_detail', slug='afdx-simulator') }}
+                            "class="project-link" >
+                           
+                            View Project
+                            <span class="arrow">↗</span>
+                        </a>
+                </article>
+
+                <article class="project-card">
+                    <h3>House Price Prediction</h3>
+                    <p>
+                        A machine learning pipeline for predicting
+                        Bengaluru house prices.
+                    </p>
+                    <span>Python · Scikit-learn · ML</span>
+                    <a 
+                            href="{{ url_for('project_detail', slug='house-price-prediction') }}
+                            "class="project-link" >
+                            View Project
+                            <span class="arrow">↗</span>
+                        </a>
+                </article>
+            </div>
+        </section>
+
+        <section id="contact" class="section">
+            <p class="section-label">LET'S CONNECT</p>
+            <h2>Contact Me</h2>
+            <p>Interested in technology and engineering? Let's connect.</p>
+            <a href="mailto:your-eng2020.cse@gmail.com" class="button primary">
+                Send Me an Email
+            </a>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Raghu GR. Built with HTML, CSS and Flask.</p>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+</body>
+</html>

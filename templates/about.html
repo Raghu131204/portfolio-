@@ -1,0 +1,154 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>About Me | Portfolio</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <header class="navbar">
+        <a href="/" class="logo">Portfolio.</a>
+
+        <nav>
+            <a href="/">Home</a>
+            <a href="/about">About</a>
+            <a href="/projects">Projects</a>
+            <a href="/#contact">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- Introduction -->
+        <section class="section">
+            <p class="section-label">GET TO KNOW ME</p>
+
+            <h1>About Me</h1>
+
+            <p>
+                I am a Computer Science Engineering graduate-in-progress
+                interested in software development, machine learning,
+                deep learning, and systems engineering.
+            </p>
+
+            <p>
+                I enjoy understanding how things work internally,
+                from neural networks and computer vision models
+                to communication protocols and network simulators.
+            </p>
+        </section>
+
+        <!-- Education -->
+        <section class="section">
+            <p class="section-label">MY BACKGROUND</p>
+
+            <h2>Education</h2>
+
+            <article class="project-card">
+                <h3>
+                    Channabasaveshwara Institute of Technology
+                </h3>
+
+                <p>
+                    Bachelor of Engineering in Computer Science
+                    and Engineering
+                </p>
+
+                <span>2022 – 2026</span>
+            </article>
+        </section>
+
+        <!-- Technical interests -->
+        <section class="section">
+            <p class="section-label">WHAT I WORK WITH</p>
+
+            <h2>Technical Skills</h2>
+
+            <div class="project-grid">
+
+                <article class="project-card">
+                    <h3>Programming</h3>
+                    <p>Python, C, C++, SQL</p>
+                    <span>Core Development</span>
+                </article>
+
+                <article class="project-card">
+                    <h3>AI & Machine Learning</h3>
+                    <p>
+                        PyTorch, Scikit-learn, Pandas,
+                        NumPy, Computer Vision
+                    </p>
+                    <span>Intelligent Systems</span>
+                </article>
+
+                <article class="project-card">
+                    <h3>Systems & Networking</h3>
+                    <p>
+                        Multithreading, UDP, TCP/IP,
+                        ARINC 429, AFDX simulation
+                    </p>
+                    <span>Systems Engineering</span>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- Experience -->
+        <section class="section">
+            <p class="section-label">PRACTICAL EXPERIENCE</p>
+
+            <h2>Experience</h2>
+
+            <article class="project-card">
+                <h3>Internship — LRDE, DRDO</h3>
+
+                <p>
+                    Worked on avionics communication concepts,
+                    ARINC 429 data handling, encoding and decoding,
+                    and communication simulation using C/C++.
+                </p>
+
+                <span>Avionics · C/C++ · Communication Systems</span>
+            </article>
+
+            <article class="project-card" style="margin-top: 20px;">
+                <h3>AI & Data Analytics Virtual Internship</h3>
+
+                <p>
+                    Worked on an Air Quality Index prediction
+                    project using machine learning techniques.
+                </p>
+
+                <span>AICTE · Shell India · Edunet Foundation</span>
+            </article>
+        </section>
+
+        <!-- Certifications -->
+        <section class="section">
+            <p class="section-label">CONTINUOUS LEARNING</p>
+
+            <h2>Certifications & Achievements</h2>
+
+            <ul>
+                <li>Neural Networks and Deep Learning — DeepLearning.AI</li>
+                <li>Python Basic Certification — HackerRank</li>
+                <li>IIRS ISRO workshop participation</li>
+                <li>First place in Code Debugging Competition</li>
+            </ul>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Built with HTML, CSS and Flask.</p>
+    </footer>
+
+</body>
+</html>
