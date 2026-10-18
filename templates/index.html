@@ -13,10 +13,7 @@
         content="Raghu GR's portfolio showcasing software engineering, computer vision, machine learning, and networking projects."
     >
 
-    <link
-        rel="stylesheet"
-        href="{{ url_for('static', filename='css/style.css') }}"
-    >
+    <link rel="stylesheet" href="/static/css/style.css">
 </head>
 
 <body>
@@ -39,14 +36,11 @@
         <section id="home" class="hero">
             <div class="hero-content">
 
-                <div class="hero-image">
-                    <img
-                        src="{{ url_for('static', filename='images/profile pic.jpg') }}"
-                        alt="Raghu GR profile photo"
-                        class="profile-photo"
-                    >
+               <div class="hero-image">
+                    <img src="/static/images/profile pic.jpg"
+                    alt="Raghu GR"
+                    class="profile-photo">
                 </div>
-
                 <div class="hero-text">
 
                     <p class="greeting">HELLO, I'M</p>
@@ -55,7 +49,7 @@
 
                     <h2>Software Developer</h2>
                     <div class="hero-buttons">
-                        <a href="#projects" class="button primary">
+                        <a href="/projects" class="button primary">
                             Explore My Work
                         </a>
 
@@ -168,7 +162,7 @@
 
 
     <!-- JavaScript -->
-    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    <script src="/static/js/main.js" defer></script>
 
 </body>
 </html>
